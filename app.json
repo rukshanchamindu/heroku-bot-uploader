@@ -2,5 +2,17 @@
   "name": "discordpy-startup",
   "description": "Herokuでdiscord.pyを始めるテンプレート",
   "repository": "https://github.com/DiscordBotPortalJP/discordpy-startup",
-  "keywords": ["python", "discord", "bot"]
+  "keywords": ["python", "discord", "bot"],
+  
+  "repository": "hhttps://github.com/",
+  "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable env variables",
+      "value": "ANYTHING"
+    },
+    "DISCORD_BOT_TOKEN": {
+      "description": "Your bot token, as a string.",
+      "value": ""
+    }
+  }
 }
