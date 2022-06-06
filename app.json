@@ -21,6 +21,6 @@
     "channel_id": {
       "description": "Discord channel id",
       "value": ""
-    },
+    }
   }
 }
