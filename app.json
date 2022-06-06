@@ -6,6 +6,10 @@
   
   "repository": "hhttps://github.com/",
   "env": {
+    "ENV": {
+      "description": "Setting this to ANYTHING will enable env variables",
+      "value": "ANYTHING"
+    },
     "DISCORD_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
       "value": ""
