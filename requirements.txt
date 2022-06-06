@@ -1,1 +1,5 @@
-discord.py[voice]>=1.7.3
+discord.py>=1.7.3
+requests
+time
+discord
+datetime
