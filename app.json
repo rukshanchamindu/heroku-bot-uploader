@@ -6,13 +6,17 @@
   
   "repository": "hhttps://github.com/",
   "env": {
-    "ENV": {
-      "description": "Setting this to ANYTHING will enable env variables",
-      "value": "ANYTHING"
-    },
     "DISCORD_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
       "value": ""
-    }
+    },
+    "server_name": {
+      "description": "rp server name",
+      "value": ""
+    },
+    "channel_id": {
+      "description": "Discord channel id",
+      "value": ""
+    },
   }
 }
