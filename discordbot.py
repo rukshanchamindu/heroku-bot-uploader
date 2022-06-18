@@ -61,7 +61,7 @@ async def players():
  
       # Embed 
       if players < 75:
-          cchn = client.get_channel(983271665477779466)
+          chn = client.get_channel(983271665477779466)
           tz = pytz.timezone('Asia/Colombo')
           ct = datetime.datetime.now(tz=tz).strftime('%d/%m/%Y %H:%M:%S')
           embed = discord.Embed(
@@ -75,7 +75,6 @@ async def players():
       else:
           text1 = x = "\n".join(playernames.split("\n")[:70])
           text2 = x = "\n".join(playernames.split("\n")[70:])
-          
           chn = client.get_channel(983271665477779466)
           tz = pytz.timezone('Asia/Colombo')
           ct = datetime.datetime.now(tz=tz).strftime('%d/%m/%Y %H:%M:%S')
