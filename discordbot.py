@@ -91,7 +91,7 @@ async def players():
             description= text2
           )
           embed.timestamp = datetime.datetime.now()
-          embed.set_footer(text= f'© Ceylon Roleplay • ( {players}/{maxPlayers} )')
+          embed.set_footer(text= f'© {server_name} • ( {players}/{maxPlayers} )')
           await chn.send(embed=embed)
                 
     except:
@@ -101,7 +101,7 @@ async def players():
         title = f'Status: Offline',
       )
       embed.timestamp = datetime.datetime.now()
-      embed.set_footer(text='© {server_name} ')
+      embed.set_footer(text= f'© {server_name} ')
       await chn.send(embed=embed)
 
     # Update every minute (60 seconds)
