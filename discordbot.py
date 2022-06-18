@@ -3,9 +3,11 @@ import requests
 import time
 import discord
 import datetime
+import pytz
 from os import getenv
 from discord.ext import commands
 
+set(pytz.all_timezones_set)
 # Set Prefix
 client = commands.Bot(command_prefix = '!')
 
@@ -38,7 +40,6 @@ async def players():
   while True:
 
     chn_id = channel_id
-
     
     try:
       # Players Information
@@ -57,17 +58,16 @@ async def players():
         for info in player['identifiers']:
           if 'discord' in info:
             playernames += f' <@{info[8:]}>\n'
-      
-      
-      
-     
+ 
       # Embed 
       if players < 75:
-          chn = client.get_channel(983271665477779466)
-          
+          channel = channel_id
+          chn = client.get_channel(channel)
+          tz = pytz.timezone('Asia/Colombo')
+          ct = datetime.datetime.now(tz=tz).strftime('%d/%m/%Y %H:%M:%S')
           embed = discord.Embed(
             colour = discord.Colour.blue(),
-            title = f'Status: {players}/{maxPlayers}',
+            title = f'Status: {players}/{maxPlayers} \n{ct}',
             description= playernames
           )
           embed.timestamp = datetime.datetime.now()
@@ -77,38 +77,36 @@ async def players():
           text1 = x = "\n".join(playernames.split("\n")[:70])
           text2 = x = "\n".join(playernames.split("\n")[70:])
           
-          chn = client.get_channel(983271665477779466)
-          
+          channel = channel_id
+          chn = client.get_channel(channel)
+          tz = pytz.timezone('Asia/Colombo')
+          ct = datetime.datetime.now(tz=tz).strftime('%d/%m/%Y %H:%M:%S')
           embed = discord.Embed(
             colour = discord.Colour.blue(),
-            title = f'Status: {players}/{maxPlayers}',
+            title = f'Status: {players}/{maxPlayers} \n{ct}',
             description= text1
           )
           await chn.send(embed=embed)
-          
-          
-          chn = client.get_channel(983271665477779466)
+          chn = client.get_channel(channel)
           embed = discord.Embed(
             colour = discord.Colour.blue(),
             description= text2
           )
           embed.timestamp = datetime.datetime.now()
-          embed.set_footer(text= f'© {server_name} • ( {players}/{maxPlayers} )')
+          embed.set_footer(text= f'© Ceylon Roleplay • ( {players}/{maxPlayers} )')
           await chn.send(embed=embed)
                 
     except:
-      chn = client.get_channel(983271665477779466)
+      channel = channel_id
+      chn = client.get_channel(channel)
       embed = discord.Embed(
-        colour = discord.Colour.blue(),
+        colour = discord.Colour.red(),
         title = f'Status: Offline',
       )
       embed.timestamp = datetime.datetime.now()
       embed.set_footer(text='© {server_name} ')
       await chn.send(embed=embed)
-      
 
-      
-      
     # Update every minute (60 seconds)
     time.sleep(120)
 
