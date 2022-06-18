@@ -84,7 +84,7 @@ async def players():
             description= text1
           )
           await chn.send(embed=embed)
-          chn = client.get_channel(channel)
+          chn = client.get_channel(983271665477779466)
           embed = discord.Embed(
             colour = discord.Colour.blue(),
             description= text2
