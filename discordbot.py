@@ -23,6 +23,7 @@ async def embed(ctx):
   await ctx.send(embed=embed)
 
 # Setting variables **U need change this**
+IP = getenv('server_ip')
 TOKEN = getenv('DISCORD_BOT_TOKEN')
 server_name = getenv('server_name')
 channel_id = getenv('channel_id')
@@ -43,10 +44,10 @@ async def players():
     
     try:
       # Players Information
-      x = requests.get(f'http://139.99.125.178:30120/players.json')
+      x = requests.get(f'http://{IP}/players.json')
       info = x.json()
       # Server Information 
-      p = requests.get(f'http://139.99.125.178:30120/dynamic.json')
+      p = requests.get(f'http://{IP}/dynamic.json')
       server = p.json()
       # maxPlayers & Players
       players, maxPlayers = server['clients'], server['sv_maxclients']
