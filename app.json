@@ -10,6 +10,10 @@
       "description": "Setting this to ANYTHING will enable env variables",
       "value": "ANYTHING"
     },
+    "server_ip": {
+      "description": "Yrp server ip.",
+      "value": ""
+    },
     "DISCORD_BOT_TOKEN": {
       "description": "Your bot token, as a string.",
       "value": ""
