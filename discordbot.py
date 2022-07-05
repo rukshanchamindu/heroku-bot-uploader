@@ -62,7 +62,7 @@ async def players():
  
       # Embed 
       if players < 75:
-          chn = client.get_channel(988372519335632936)
+          chn = client.get_channel(964348349459341315)
           tz = pytz.timezone('Asia/Colombo')
           ct = datetime.datetime.now(tz=tz).strftime('%d/%m/%Y %H:%M:%S')
           embed = discord.Embed(
@@ -76,7 +76,7 @@ async def players():
       else:
           text1 = x = "\n".join(playernames.split("\n")[:70])
           text2 = x = "\n".join(playernames.split("\n")[70:])
-          chn = client.get_channel(988372519335632936)
+          chn = client.get_channel(964348349459341315)
           tz = pytz.timezone('Asia/Colombo')
           ct = datetime.datetime.now(tz=tz).strftime('%d/%m/%Y %H:%M:%S')
           embed = discord.Embed(
@@ -85,7 +85,7 @@ async def players():
             description= text1
           )
           await chn.send(embed=embed)
-          chn = client.get_channel(988372519335632936)
+          chn = client.get_channel(964348349459341315)
           embed = discord.Embed(
             colour = discord.Colour.blue(),
             description= text2
@@ -95,7 +95,7 @@ async def players():
           await chn.send(embed=embed)
                 
     except:
-      chn = client.get_channel(988372519335632936)
+      chn = client.get_channel(964348349459341315)
       embed = discord.Embed(
         colour = discord.Colour.red(),
         title = f'Status: Offline',
