@@ -98,7 +98,7 @@ class MyClient(discord.Client):
         super().__init__(**options)
         self.servers = list()
 
-        self.servers.append(Server("d67g4d", "Ceylon RP", "", 999643899175911525))
+        self.servers.append(Server("d67g4d", "Ceylon RP", "", 1000323214876090368))
 
         self.playersDB = PlayerDB(self.playersDBFile)
 
